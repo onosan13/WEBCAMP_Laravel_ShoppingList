@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ShoppingListController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\CompletedShoppingListController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,5 +34,6 @@ Route::middleware(['auth'])->group(function(){
         Route::delete('/delete/{shopping_list_id}', [ShoppingListController::class, 'delete'])->whereNumber('shopping_list_id')->name('delete');
         Route::post('/complete/{shopping_list_id}', [ShoppingListController::class, 'complete'])->whereNumber('shopping_list_id')->name('complete');
     });
+    Route::get('/completed_shopping_list/list', [CompletedShoppingListController::class, 'list']);
     Route::get('/logout', [AuthController::class, 'logout']);
 });

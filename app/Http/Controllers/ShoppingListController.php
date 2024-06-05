@@ -50,8 +50,8 @@ class ShoppingListController extends Controller
             }
             $list_item->delete();
             $list_array = $list_item->toArray();
-            unset($dask_datum['created_at']);
-            unset($dask_datum['updated_at']);
+            unset($list_array['created_at']);
+            unset($list_array['updated_at']);
             $r = CompletedModel::create($list_array);
             if($r === null){
                 throw new \Exception('');
@@ -79,14 +79,4 @@ class ShoppingListController extends Controller
         return $list_item;
     }
 
-    /**
-     * 単一のレコードを表示
-     */
-    protected function singleShoppingRender($shopping_list_id, $template_name){
-        $list_item = $this->getShoppingListModel($shopping_list_id);
-        if($list_item === null){
-            return redirect('/shopping_list/list');
-        }
-        return view($template_name, ['list_item'=>$list_item]);
-    }
 }
