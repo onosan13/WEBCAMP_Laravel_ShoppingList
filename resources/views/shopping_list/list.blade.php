@@ -5,7 +5,7 @@
 {{--メインコンテンツ--}}
 
 @section('contents')
-        <h1>「買うもの」登録</h1>
+        <h1>「買うもの」の登録</h1>
         @if($errors->any())
             <div>
             @foreach($errors->all() as $error)
