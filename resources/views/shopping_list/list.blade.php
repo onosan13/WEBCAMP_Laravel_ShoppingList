@@ -20,7 +20,7 @@
             「買うもの」を削除しました！！<br>
         @endif
         @if(session('shopping_complete_succes') == true)
-            「買うもの」を完了しました！！<br>
+            「買うもの」を完了にしました！！<br>
         @endif
         @if(session('shopping_complete_false') == true)
             「買うもの」を完了に失敗しました。<br>
@@ -44,7 +44,7 @@
                 <td>
                     <form action="{{route('complete', ['shopping_list_id'=>$list->id])}}" method="post">
                         @csrf
-                        <button onclick='return confirm("この「買うもの」を完了します。よろしいですか？");'>完了</button>
+                        <button onclick='return confirm("この「買うもの」を完了にします。よろしいですか？");'>完了</button>
                     </form>
                 </td>
                 <td>
