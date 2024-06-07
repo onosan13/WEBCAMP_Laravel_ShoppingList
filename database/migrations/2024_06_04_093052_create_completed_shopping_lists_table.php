@@ -15,7 +15,7 @@ class CreateCompletedShoppingListsTable extends Migration
     {
         Schema::create('completed_shopping_lists', function (Blueprint $table) {
             $table->id();
-            $table->string('name',128);
+            $table->string('name',255);
             //$table->timestamps();
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
