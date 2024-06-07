@@ -22,7 +22,7 @@
         </table>
         現在{{$comp_lists->currentPage()}}ページ目<br>
         @if(!$comp_lists->onFirstPage())
-            <a href="/shopping_list/list">最初のページ</a>
+            <a href="/completed_shopping_list/list">最初のページ</a>
         @else
             最初のページ
         @endif
