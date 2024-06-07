@@ -47,6 +47,7 @@
                         <button onclick='return confirm("この「買うもの」を完了にします。よろしいですか？");'>完了</button>
                     </form>
                 </td>
+                <td><div style="width:20px"></div></td>
                 <td>
                     <form action="{{route('delete', ['shopping_list_id'=>$list->id])}}" method="post">
                         @csrf
