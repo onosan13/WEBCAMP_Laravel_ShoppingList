@@ -17,7 +17,7 @@ class AdminAuthUser extends Seeder
     public function run()
     {
         DB::table('admin_users')->insert([
-            'login_id' => 'adminuser',
+            'login_id' => 'hogemin',
             'password' => Hash::make('pass'),
         ]);
     }

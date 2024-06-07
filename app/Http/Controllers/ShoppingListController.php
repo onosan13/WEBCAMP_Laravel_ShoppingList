@@ -14,7 +14,7 @@ class ShoppingListController extends Controller
     public function list(){
         $per_page = 5;
         $list = shopping_listModel::where('user_id', Auth::id())
-            ->orderBY('created_at', 'ASC')
+            ->orderBy('name', 'ASC')
             ->paginate($per_page);
         return view('/shopping_list/list',['lists'=>$list]);
     }

@@ -26,7 +26,6 @@ class CreateindexShoppingUserId extends Migration
     public function down():void
     {
         Schema::table('shopping_lists', function (Blueprint $table){
-            $table->dropForeign('shopping_lists_user_id_foreign');
             $table->dropIndex('shopping_lists_user_id_index');
         });
     }
